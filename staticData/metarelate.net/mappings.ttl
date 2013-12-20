@@ -8167,3 +8167,47 @@ map:cb9accf17e079ad479e9c8d3a2b9d9da9ef4f278
       mr:status     "Draft" ;
       mr:target     <http://www.metarelate.net/metOcean/component/fb5bf519db52927d8734b03ca2e368aac382ee1c> .
 
+
+map:eef9e5e49a146156feb7e229ea42cbcc93e1b5bc
+      rdf:type      mr:Mapping ;
+      dc:creator    <http://www.metarelate.net/metOcean/people/marqh> ;
+      dc:date       "2013-12-20T09:46:18.431207"^^xsd:dateTime ;
+      mr:invertible  "False" ;
+      mr:reason     "new mapping" ;
+      mr:source     <http://www.metarelate.net/metOcean/component/d1a3dfecbd660525cc6f7a3c5b98af517b436714> ;
+      mr:status     "Draft" ;
+      mr:target     <http://www.metarelate.net/metOcean/component/4ad90183698c439289201468a9fcb947115825d1> .
+
+map:cd5ee8e5d50c9612ada672a7bf39a2284830450c
+      rdf:type      mr:Mapping ;
+      dc:creator    <http://www.metarelate.net/metOcean/people/marqh> ;
+      dc:date       "2013-12-20T09:46:34.409746"^^xsd:dateTime ;
+      mr:invertible  "False" ;
+      mr:reason     "new mapping" ;
+      mr:source     <http://www.metarelate.net/metOcean/component/4a33839a621a1d540393580565170842530fb49d> ;
+      mr:status     "Draft" ;
+      mr:target     <http://www.metarelate.net/metOcean/component/d8dc1402fd0a81e26b73393d0d40bb5d6c0351f1> .
+
+map:f085d41f68b7c7714ae9ca1912d81910f801a43f
+      rdf:type      mr:Mapping ;
+      dc:creator    <http://www.metarelate.net/metOcean/people/marqh> ;
+      dc:date       "2013-12-20T09:45:40.713874"^^xsd:dateTime ;
+      mr:hasValueMap  <http://www.metarelate.net/metOcean/valueMap/16518ae5e0ddee78bcd9cd10226ee243c35f75d1> ;
+      mr:hasValueMap  <http://www.metarelate.net/metOcean/valueMap/fd84cb2625796d11a272127d3a87de0bae1158ff> ;
+      mr:hasValueMap  <http://www.metarelate.net/metOcean/valueMap/e2c22e02c267642f891c277f67630643fa39dafc> ;
+      mr:invertible  "False" ;
+      mr:reason     "new mapping" ;
+      mr:source     <http://www.metarelate.net/metOcean/component/6214556bdb0841a7c564189cae70930073c339eb> ;
+      mr:status     "Draft" ;
+      mr:target     <http://www.metarelate.net/metOcean/component/4ee03c1e7a813397b6edf972cc37a0ed25045cc6> .
+
+<http://www.metarelate.net/metOcean/mapping/275af6170dbeecad44cf77fe03ab62d55e863397>
+      rdf:type      mr:Mapping ;
+      dc:creator    <http://www.metarelate.net/metOcean/people/marqh> ;
+      dc:date       "2013-12-20T09:46:47.193927"^^xsd:dateTime ;
+      mr:invertible  "False" ;
+      mr:reason     "new mapping" ;
+      mr:source     <http://www.metarelate.net/metOcean/component/89a5b770b34a576737f88ae388c5b34a07d8aea8> ;
+      mr:status     "Draft" ;
+      mr:target     <http://www.metarelate.net/metOcean/component/659392e86cc905674dccefaf9db007f1373e122f> .
+
