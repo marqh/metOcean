@@ -25,7 +25,8 @@ metocFormat:cf a skos:Concept ;
         skos:notation "cf" .
 
 metocFormat:grib a skos:Concept ;
-        skos:notation "grib" .
+        skos:notation "grib" ;
+	<http://www.metarelate.net/vocabulary/index.html#subFormat> <http://def.ecmwf.int/api/grib/keys/editionNumber> .
 
 metocFormat:um a skos:Concept ;
         skos:notation "um" .
