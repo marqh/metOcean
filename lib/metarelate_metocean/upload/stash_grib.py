@@ -53,11 +53,14 @@ def parse_file(fuseki_process, file_handle, userid, branchid):
                 force = False
                 if arecord.force == 'y':
                     force = True
-            amap, errs = make_mappings(fuseki_process, arecord, userid,
+            smap, serrs, gmap, gerrs = make_mappings(fuseki_process, arecord, userid,
                                        branchid, arecord.force)
             new_mappings.append(amap)
-            if errs:
-                errors.append('line{}: {}'.format(i, '\n\t'.join(errs)))
+            new_mappings.append(gmap)
+            if serrs:
+                errors.append('line{}: {}'.format(i, '\n\t'.join(serrs)))
+            if geers:
+                errors.append('line{}: {}'.format(i, '\n\t'.join(gerrs)))
     if errors:
         raise ValueError('||\n'.join(errors))
     # now all inputs are validated, create the triples in the tdb
@@ -78,7 +81,7 @@ def make_mappings(fu_p, arecord, userid, branchid, force):
         replaced = metarelate.Mapping(replaces.get('mapping'))
         replaced.populate_from_uri(fu_p, branchid)
         replaced = update_mappingmeta(replaced, userid)
-        result = replaced
+        smap = replaced
     else:
         target_differs = fu_p.find_valid_mapping(astashcomp, None, graph=branchid)
         if target_differs:
@@ -92,7 +95,7 @@ def make_mappings(fu_p, arecord, userid, branchid, force):
             if not force:
                 serrs.append('forcing replacement of '
                             '{m} with {n}'.format(m=mr, n=nr))
-            result = replaced
+            smap = replaced
         else:
             smap = metarelate.Mapping(None, astashcomp, acfcomp,
                                       creator=userid, invertible='"False"')
@@ -103,7 +106,7 @@ def make_mappings(fu_p, arecord, userid, branchid, force):
         replaced = metarelate.Mapping(replaces.get('mapping'))
         replaced.populate_from_uri(fu_p, branchid)
         replaced = update_mappingmeta(replaced, userid)
-        result = replaced
+        gmap = replaced
     else:
         target_differs = fu_p.find_valid_mapping(agribcomp, None, graph=branchid)
         if target_differs:
@@ -117,7 +120,7 @@ def make_mappings(fu_p, arecord, userid, branchid, force):
             if not force:
                 gerrs.append('forcing replacement of '
                             '{m} with {n}'.format(m=mr, n=nr))
-            result = replaced
+            gmap = replaced
         else:
             gmap = metarelate.Mapping(None, agribcomp, acfcomp,
                                       creator=userid, invertible=inv)
