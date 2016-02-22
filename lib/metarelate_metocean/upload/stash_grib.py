@@ -55,7 +55,7 @@ def parse_file(fuseki_process, file_handle, userid, branchid):
                     force = True
             smap, serrs, gmap, gerrs = make_mappings(fuseki_process, arecord, userid,
                                        branchid, arecord.force)
-            new_mappings.append(amap)
+            new_mappings.append(smap)
             new_mappings.append(gmap)
             if serrs:
                 errors.append('line{}: {}'.format(i, '\n\t'.join(serrs)))
