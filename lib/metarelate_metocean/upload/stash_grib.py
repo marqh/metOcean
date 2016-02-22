@@ -69,9 +69,9 @@ def parse_file(fuseki_process, file_handle, userid, branchid):
 def make_mappings(fuseki_process, arecord, userid, branchid, force):
     serrs = []
     gerrs = []
-    astashcomp, serrs = stash_comp(record.stash, serrs)
+    astashcomp, serrs = stash_comp(arecord.stash, serrs)
     agribcomp, gerrs = grib2_comp(arecord, gerrs)
-    acfcomp = cfname(name, units)
+    acfcomp = cfname(arecord.cfname, arecord.units)
 
     replaces = fu_p.find_valid_mapping(astashcomp, acfcomp, graph=branchid)
     if replaces:
