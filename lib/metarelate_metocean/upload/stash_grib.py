@@ -59,7 +59,7 @@ def parse_file(fuseki_process, file_handle, userid, branchid):
             new_mappings.append(gmap)
             if serrs:
                 errors.append('line{}: {}'.format(i, '\n\t'.join(serrs)))
-            if geers:
+            if gerrs:
                 errors.append('line{}: {}'.format(i, '\n\t'.join(gerrs)))
     if errors:
         raise ValueError('||\n'.join(errors))
