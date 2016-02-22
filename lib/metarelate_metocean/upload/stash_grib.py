@@ -66,7 +66,7 @@ def parse_file(fuseki_process, file_handle, userid, branchid):
         amap.target.create_rdf(fuseki_process, branchid)
         amap.create_rdf(fuseki_process, branchid)
 
-def make_mappings(fuseki_process, arecord, userid, branchid, force):
+def make_mappings(fu_p, arecord, userid, branchid, force):
     serrs = []
     gerrs = []
     astashcomp, serrs = stash_comp(arecord.stash, serrs)
