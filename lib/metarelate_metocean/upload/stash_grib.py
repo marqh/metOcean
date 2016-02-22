@@ -37,7 +37,7 @@ def parse_file(fuseki_process, file_handle, userid, branchid):
         i = n + 1
         line = line.strip()
         lsplit = line.split('|')
-        if len(lsplit) != 8:
+        if len(lsplit) != 9:
             if line:
                 errors.append('line{}: unexpected line splitting; expected:\n'
                               '{}\ngot:\n{}'.format(i, expected, line))
