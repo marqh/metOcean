@@ -10,8 +10,8 @@ import metarelate.fuseki as fuseki
 from metarelate.prefixes import Prefixes
 from metarelate_metocean.upload.uploaders import (cfname, update_mappingmeta,
                                                   stash_comp, grib2_comp)
-import metarelate_metocean.upload.stashc_cfname._report as stcf_report
-import metarelate_metocean.upload.grib2_cfname._report as g2cf_report
+import metarelate_metocean.upload.stashc_cfname as stcf
+import metarelate_metocean.upload.grib2_cfname as g2cf
 
 record = namedtuple('record', 'stash cfname units disc pcat pnum force')
 expected = '|STASH(msi)|CFName|units|Disc|pCat|pNum|force_update(y/n)|'
@@ -88,11 +88,11 @@ def make_mappings(fu_p, arecord, userid, branchid, force):
         if target_differs:
             replaced = metarelate.Mapping(target_differs.get('mapping'))
             replaced.populate_from_uri(fu_p, branchid)
-            mr = stcf_report(replaced)
+            mr = stcf._report(replaced)
             replaced = update_mappingmeta(replaced, userid)
             replaced.source = astashcomp
             replaced.target = acfcomp
-            nr = stcf_report(replaced)
+            nr = stcf._report(replaced)
             if not force:
                 serrs.append('forcing replacement of '
                             '{m} with {n}'.format(m=mr, n=nr))
@@ -114,10 +114,10 @@ def make_mappings(fu_p, arecord, userid, branchid, force):
             replaced = metarelate.Mapping(target_differs.get('mapping'))
             replaced.populate_from_uri(fu_p, branchid)
             replaced = update_mappingmeta(replaced, userid)
-            mr = g2cf_report(replaced)
+            mr = g2cf._report(replaced)
             replaced.source = agribcomp
             replaced.target = acfcomp
-            nr = g2cf_report(replaced)
+            nr = g2cf._report(replaced)
             if not force:
                 gerrs.append('forcing replacement of '
                             '{m} with {n}'.format(m=mr, n=nr))
